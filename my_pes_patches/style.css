@@ -1,0 +1,263 @@
+﻿/* تنسيقات عامة للجسم والخطوط */
+body {
+    font-family: 'Cairo', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a; /* خلفية داكنة جداً */
+    color: #f0f0f0; /* لون فاتح للنصوص العامة */
+    direction: rtl; /* للغة العربية */
+    text-align: right; /* للمحاذاة لليمين */
+    line-height: 1.6;
+    overflow-x: hidden; /* لمنع ظهور شريط التمرير الأفقي */
+}
+
+/* الهيدر (الشريط العلوي) */
+header {
+    background: linear-gradient(to right, #007bff, #0056b3); /* تدرج أزرق للهيدر */
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    border-bottom: 5px solid #00c471; /* شريط أخضر مميز في الأسفل */
+    position: relative;
+    z-index: 10;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3.8em; /* حجم أكبر جداً للعنوان */
+    letter-spacing: 3px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6); /* ظل نصي واضح */
+    font-weight: 700;
+    animation: fadeInDown 1s ease-out; /* تأثير ظهور متحرك */
+}
+
+header p {
+    font-size: 1.5em;
+    margin-top: 15px;
+    font-weight: 300;
+    opacity: 0.9;
+    animation: fadeInUp 1s ease-out 0.3s forwards; /* تأثير ظهور متحرك بعد تأخير */
+    opacity: 0; /* يبدأ مخفي */
+}
+
+/* تأثيرات حركية للهيدر */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* القسم الرئيسي للمحتوى */
+main {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+    background-color: #2a2a2a; /* خلفية أغمق للقسم الرئيسي */
+    border-radius: 15px; /* حواف دائرية واضحة */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* ظل عميق */
+}
+
+.patch-section {
+    margin-bottom: 60px;
+}
+
+.patch-section h2 {
+    color: #00c471; /* أخضر فاتح ومميز للعناوين */
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 3em;
+    border-bottom: 4px solid #007bff; /* خط سفلي أزرق سميك */
+    padding-bottom: 18px;
+    display: inline-block;
+    width: 100%;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+/* شبكة كروت الباتشات */
+.patch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* كروت متجاوبة */
+    gap: 40px; /* مسافات أكبر بين الكروت */
+    justify-content: center;
+}
+
+/* شكل كارت الباتش الواحد */
+.patch-card {
+    background-color: #3a3a3a; /* خلفية الكارت */
+    border: 1px solid #4f4f4f; /* حدود للكارت */
+    border-radius: 15px; /* حواف دائرية */
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* ظل جذاب */
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* تأثيرات انتقالية ناعمة */
+    text-align: center;
+    padding-bottom: 25px;
+    position: relative;
+}
+
+.patch-card:hover {
+    transform: translateY(-10px) scale(1.03); /* يرتفع ويكبر قليلاً عند الوقوف عليه */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6); /* ظل أكبر وأوضح */
+}
+
+.patch-card img {
+    width: 100%;
+    height: 250px; /* ارتفاع ثابت للصور */
+    object-fit: cover; /* لضمان تغطية الصورة للمساحة */
+    border-bottom: 3px solid #00c471; /* شريط أخضر تحت الصورة */
+    filter: brightness(0.9); /* إضاءة خفيفة للصورة */
+    transition: filter 0.3s ease;
+}
+
+.patch-card:hover img {
+    filter: brightness(1.1); /* تزيد الإضاءة عند الوقوف على الكارت */
+}
+
+.patch-card h3 {
+    color: #00c471; /* أخضر فاتح لعنوان الباتش */
+    margin: 25px 15px 12px;
+    font-size: 2.2em; /* حجم أكبر لعنوان الباتش */
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.patch-card p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    padding: 0 25px;
+    margin-bottom: 25px;
+    color: #ccc; /* لون فاتح للفقرات */
+}
+
+/* زر التحميل الرئيسي */
+.download-btn {
+    display: inline-block;
+    background: linear-gradient(to right, #00c471, #00a05a); /* تدرج أخضر للزر */
+    color: #fff;
+    padding: 18px 40px;
+    border-radius: 10px; /* حواف دائرية أكبر للزر */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.3em;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.download-btn:hover {
+    background: linear-gradient(to right, #00a05a, #00c471); /* تدرج معكوس عند الوقوف عليه */
+    transform: translateY(-5px); /* يرتفع أكثر قليلاً */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.patch-notes {
+    font-size: 0.95em;
+    color: #aaa;
+    margin-top: 25px;
+    padding: 0 25px;
+}
+
+/* تنسيقات خاصة بقائمة روابط التحميل (لو الباتش مقسم لأجزاء) */
+.download-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.download-list li {
+    margin-bottom: 15px;
+    display: block;
+}
+
+.download-list .download-btn {
+    width: calc(100% - 60px); /* عرض مناسب للأزرار داخل الكارت */
+    max-width: 320px;
+    font-size: 1.1em;
+    padding: 14px 25px;
+}
+
+/* الفوتر (الختام) */
+footer {
+    background-color: #000; /* خلفية سوداء للفوتر */
+    color: #eee;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 50px;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.3);
+}
+
+footer p {
+    margin: 0;
+    font-size: 1em;
+    font-weight: 300;
+}
+
+/* الاستجابة لتغير حجم الشاشة (Responsive Design) */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.8em;
+    }
+    header p {
+        font-size: 1.2em;
+    }
+    main {
+        padding: 25px;
+    }
+    .patch-section h2 {
+        font-size: 2.5em;
+    }
+    .patch-grid {
+        grid-template-columns: 1fr;
+    }
+    .patch-card {
+        margin: 0 auto;
+        max-width: 400px; /* تحديد أقصى عرض للكارت على الموبايل */
+    }
+    .download-list .download-btn {
+        width: calc(100% - 40px);
+        max-width: none;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2.2em;
+    }
+    header p {
+        font-size: 1em;
+    }
+    .patch-section h2 {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+    .patch-card h3 {
+        font-size: 1.6em;
+    }
+    .patch-card p {
+        font-size: 0.95em;
+    }
+    .download-btn {
+        font-size: 1.1em;
+        padding: 15px 30px;
+    }
+}
